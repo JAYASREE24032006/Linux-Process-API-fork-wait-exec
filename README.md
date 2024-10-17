@@ -1,25 +1,25 @@
-# Ex02-OS-Linux-Process API - fork(), wait(), exec()
+# Ex2 - Linux-Process API - fork(), wait(), exec()
 
-## AIM:
+## AIM :
 To write C Program that uses Linux Process API - fork(), wait(), exec()
 
-## DESIGN STEPS:
+## DESIGN STEPS :
 
-### Step 1:
+### Step 1 :
 
 Navigate to any Linux environment installed on the system or installed inside a virtual environment like virtual box/vmware or online linux JSLinux (https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&mem=192) or docker.
 
-### Step 2:
+### Step 2 :
 
 Write the C Program using Linux Process API - fork(), wait(), exec()
 
-### Step 3:
+### Step 3 :
 
 Test the C Program for the desired output. 
 
-## PROGRAM:
+## PROGRAM :
 
-## C Program to print process ID and parent Process ID using Linux API system calls
+### C Program to print process ID and parent Process ID using Linux API system calls :
 
 
 ```
@@ -27,20 +27,15 @@ Test the C Program for the desired output.
 #include <sys/types.h>
 #include <unistd.h>
 int main(void)
-{	//variable to store calling function's process id
+{
 	pid_t process_id;
-	//variable to store parent function's process id
 	pid_t p_process_id;
-	//getpid() - will return process id of calling function
 	process_id = getpid();
-	//getppid() - will return process id of parent function
 	p_process_id = getppid();
-	//printing the process ids
-
-//printing the process ids
 	printf("The process id: %d\n",process_id);
 	printf("The process id of parent function: %d\n",p_process_id);
-	return 0; }
+	return 0;
+}
 
 ```
 
@@ -56,7 +51,7 @@ int main(void)
 
 
 
-##OUTPUT
+## OUTPUT :
 
 ```
 $ ./pidcheck.o 
@@ -89,16 +84,21 @@ $ ps
 #include <stdio.h>
 #include<stdlib.h>
 int main()
-{ int pid; 
+{
+ int pid; 
 pid=fork(); 
 if(pid == 0) 
-{ printf("Iam child my pid is %d\n",getpid()); 
+{
+printf("Iam child my pid is %d\n",getpid()); 
 printf("My parent pid is:%d\n",getppid()); 
-exit(0); } 
-else{ 
+exit(0);
+ } 
+else
+{ 
 printf("I am parent, my pid is %d\n",getpid()); 
 sleep(100); 
-exit(0);} 
+exit(0);
+} 
 }
 ```
 
@@ -111,7 +111,7 @@ exit(0);}
 
 
 
-##OUTPUT
+## OUTPUT :
 ```
 $ ./forkcheck.o 
 I am parent, my pid is 7029
@@ -127,14 +127,15 @@ My parent pid is:7029
 
 
 
-## C Program to execute Linux system commands using Linux API system calls exec() family
+## C Program to execute Linux system commands using Linux API system calls exec() family :
 
 ```
 #include <stdlib.h>
 #include <sys/wait.h>
 #include <sys/types.h>
 int main()
-{       int status;
+{
+        int status;
         printf("Running ps with execlp\n");
         execl("ps", "ps", "ax", NULL);
         wait(&status);
@@ -151,7 +152,8 @@ printf("Running ps with execlp. Now with path specified\n");
         else
                 puts("child did not exit successfully\n");
         printf("Done.\n");
-        exit(0);}
+        exit(0);
+}
 ```
 
 
@@ -177,7 +179,7 @@ printf("Running ps with execlp. Now with path specified\n");
 
 
 
-##OUTPUT
+## OUTPUT :
 
 ```
 $ ./execcheck2.o 
@@ -200,5 +202,5 @@ child exited with status of 0
 
 
 
-## RESULT:
+## RESULT :
 The programs are executed successfully.
