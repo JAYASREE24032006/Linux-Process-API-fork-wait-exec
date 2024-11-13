@@ -1,19 +1,19 @@
-# Ex2 - Linux-Process API - fork(), wait(), exec()
+# EX2 - PROGRAMS USING LINUX PROCESS API FORK() , WAIT() , EXEC()
 
 ## AIM :
 To write C Program that uses Linux Process API - fork(), wait(), exec()
 
 ## DESIGN STEPS :
 
-### Step 1 :
+### STEP 1 :
 
 Navigate to any Linux environment installed on the system or installed inside a virtual environment like virtual box/vmware or online linux JSLinux (https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&mem=192) or docker.
 
-### Step 2 :
+### STEP 2 :
 
 Write the C Program using Linux Process API - fork(), wait(), exec()
 
-### Step 3 :
+### STEP 3 :
 
 Test the C Program for the desired output. 
 
@@ -77,7 +77,7 @@ $ ps
 
 
 
-## C Program to create new process using Linux API system calls fork() and exit()
+### C Program to create new process using Linux API system calls fork() and exit()
 
 
 ```
@@ -127,7 +127,7 @@ My parent pid is:7029
 
 
 
-## C Program to execute Linux system commands using Linux API system calls exec() family :
+### C Program to execute Linux system commands using Linux API system calls exec() family :
 
 ```
 #include <stdlib.h>
@@ -203,4 +203,4 @@ child exited with status of 0
 
 
 ## RESULT :
-The programs are executed successfully.
+The C Program that uses Linux Process API - fork(), wait(), exec() are executed successfully.
